@@ -1,10 +1,21 @@
+import java.math.BigInteger;
+
 
 public class Main {
 
 	
 	public static void main(String[] args){
 		System.out.println("Hello world!");
-	
+		BigInteger b = BigInteger.valueOf(31);
+		System.out.println(b.isProbablePrime(99));
+		
+		PrimeSieve p = new PrimeSieve(65536);
+		FactoringPrimeSieve fac = new FactoringPrimeSieve(65536);
+		System.out.print("65536: ");
+		for(int i : fac.numbers[65536].getFactors()){
+			System.out.print(i+ " ");
+		}
+		
 	}
 	
     /**
