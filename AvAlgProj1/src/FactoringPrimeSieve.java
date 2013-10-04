@@ -4,7 +4,6 @@ import java.util.LinkedList;
  * 
  * @author Fredric
  * Calculates all factors in all numbers up to N
- * Warning, only up to 16 factors (max number 65536)
  */
 public class FactoringPrimeSieve {
 	public Number[] numbers;
@@ -69,7 +68,6 @@ public class FactoringPrimeSieve {
  * 
  * @author Fredric
  * A number with a linked list showing what factors it has in it
- * Warning, only up to 16 factors
  */
 class Number {
 	private int[] factors = new int[FactoringPrimeSieve.MAX_FACTORS];
