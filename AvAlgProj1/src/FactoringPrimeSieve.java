@@ -3,12 +3,14 @@ import java.util.LinkedList;
 /**
  * 
  * @author Fredric
- * 
+ * Calculates all factors in all numbers up to N
+ * Warning, only up to 16 factors (max number 65536)
  */
 public class FactoringPrimeSieve {
 	public Number[] numbers;
-	
+	public static int MAX_FACTORS;
 	public FactoringPrimeSieve(int N) {
+		MAX_FACTORS = binlog(N);
 
 		// Here we store all our numbers and their factors
 		numbers = new Number[N + 1];
@@ -52,6 +54,15 @@ public class FactoringPrimeSieve {
 //			System.out.println();
 //		}
 	}
+	public static int binlog( int bits ) // returns 0 for bits=0
+	{
+	    int log = 0;
+	    if( ( bits & 0xffff0000 ) != 0 ) { bits >>>= 16; log = 16; }
+	    if( bits >= 256 ) { bits >>>= 8; log += 8; }
+	    if( bits >= 16  ) { bits >>>= 4; log += 4; }
+	    if( bits >= 4   ) { bits >>>= 2; log += 2; }
+	    return log + ( bits >>> 1 );
+	}
 }
 
 /**
@@ -61,7 +72,7 @@ public class FactoringPrimeSieve {
  * Warning, only up to 16 factors
  */
 class Number {
-	private int[] factors = new int[16];
+	private int[] factors = new int[FactoringPrimeSieve.MAX_FACTORS];
 	private int count = 0;
 
 	public Number(){}
@@ -82,5 +93,6 @@ class Number {
 	}
 
 }
+
 
 

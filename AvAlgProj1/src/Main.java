@@ -9,10 +9,10 @@ public class Main {
 		BigInteger b = BigInteger.valueOf(31);
 		System.out.println(b.isProbablePrime(99));
 		
-		PrimeSieve p = new PrimeSieve(65536);
-		FactoringPrimeSieve fac = new FactoringPrimeSieve(65536);
-		System.out.print("65536: ");
-		for(int i : fac.numbers[65536].getFactors()){
+		int testNumber = 65536*2*3*5;
+		FactoringPrimeSieve fac = new FactoringPrimeSieve(testNumber);
+		System.out.print(testNumber+": ");
+		for(int i : fac.numbers[testNumber].getFactors()){
 			System.out.print(i+ " ");
 		}
 		
