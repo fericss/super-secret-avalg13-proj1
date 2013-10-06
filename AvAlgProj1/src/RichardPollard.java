@@ -7,6 +7,7 @@ public class RichardPollard {
 	private static BigInteger ZERO = new BigInteger("0");
 	private static BigInteger ONE = new BigInteger("1");
 	private static BigInteger TWO = new BigInteger("2");
+	private static Random rand = new Random();
 	/**
 	 * TODO: This needs major rewriting.
 	 * @param N
@@ -15,14 +16,14 @@ public class RichardPollard {
 	public static BigInteger rho(BigInteger N){
 		BigInteger ys = null, x = null;
 		BigInteger 
-				y = new BigInteger(N.bitCount(),new Random()), 
-				c = new BigInteger(N.bitCount(),new Random()),
-				m = new BigInteger(N.bitCount(),new Random());
+				y = new BigInteger(N.bitLength(),rand), 
+				c = new BigInteger(N.bitLength(),rand), 
+				m = new BigInteger(N.bitLength(),rand);
 		BigInteger 	g = RichardPollard.ONE,
 					r = RichardPollard.ONE,
 					q = RichardPollard.ONE;
 		while(g.compareTo(RichardPollard.ONE)==0){
-			System.out.println("wa");
+//			System.out.println("wa");
 			x = y;
 			for(int i = 0; i<r.doubleValue();i++){
 				y = y.multiply(y).remainder(N).add(c).remainder(N);
@@ -51,7 +52,7 @@ public class RichardPollard {
 			}
 		}
 		
-		System.out.println(y.doubleValue()+" "+r.doubleValue());
+//		System.out.println(y.doubleValue()+" "+r.doubleValue());
 		return g;
 		
 	}
