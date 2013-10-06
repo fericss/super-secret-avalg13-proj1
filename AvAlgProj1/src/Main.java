@@ -13,9 +13,9 @@ public class Main {
 		/// 262144 tested, and does not run out of memory on kattis: Accepted (0) 	0.88 s 	Java
 		/// (not saying 262144 is a good limit or anything, just that it's the maximum amount of memory we're allowed)
 		
-		int testNumber = 262144;
+		int testNumber = 262146;
 		FactoringPrimeSieve fac = new FactoringPrimeSieve(testNumber);
-		
+/**		
 		Scanner sc = new Scanner(System.in);
 		while (sc.hasNext()) {
 			double a = sc.nextDouble();
@@ -40,12 +40,14 @@ public class Main {
 			}
 			System.out.println();
 		}
+*/
 		
-		
-//		System.out.print(testNumber+": ");
-//		for(int i : fac.numbers[testNumber].getFactors()){
-//			System.out.print(i+ " ");
-//		}
+		System.out.print(testNumber-2+": ");
+		for(int i : fac.numbers[testNumber-2].getFactors()){
+			System.out.print(i+ " ");
+		}
+		BigInteger b = new BigInteger("2622343432412341341455435713241234561");
+		System.out.println(RichardPollard.rho(b));
 		
 	}
 	
