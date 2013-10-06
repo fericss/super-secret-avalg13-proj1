@@ -24,7 +24,7 @@ public class RichardPollard {
 		while(g.compareTo(RichardPollard.ONE)==0){
 			System.out.println("wa");
 			x = y;
-			for(int i =1; i>r.doubleValue();i++){
+			for(int i = 0; i<r.doubleValue();i++){
 				y = y.multiply(y).remainder(N).add(c).remainder(N);
 			}
 			BigInteger k = RichardPollard.ZERO;
