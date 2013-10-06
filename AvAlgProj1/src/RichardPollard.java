@@ -1,7 +1,13 @@
 import java.math.BigInteger;
 import java.util.Random;
 
-
+/**
+ * 
+ * @author Fredric
+ *
+ *
+ *http://comeoncodeon.wordpress.com/2010/09/18/pollard-rho-brent-integer-factorization/
+ */
 public class RichardPollard {
 	
 	private static BigInteger ZERO = new BigInteger("0");
