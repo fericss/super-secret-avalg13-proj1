@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class Main {
 
 	static FactoringPrimeSieve fac;
+//	static Lenstras lens;
 	BigInteger a, b, c;
 
 	public static void main(String[] args2){
@@ -24,6 +25,7 @@ public class Main {
 		// 2^18 = 262144, value not yet set in stone
 		a = new BigInteger("262144");
 		fac = new FactoringPrimeSieve(a.intValue());
+//		lens = new Lenstras();
 
 		// This we want around 2^70 = 1180591620717411303424
 		// 2^75 = 37778931862957161709568
@@ -31,6 +33,7 @@ public class Main {
 
 		// This is 2^100
 		c = new BigInteger("1267650600228229401496703205376");
+
 
 		Scanner sc = new Scanner(System.in);
 		while (sc.hasNext()) {
@@ -54,7 +57,7 @@ public class Main {
 			System.out.println("OMG LOL WHAT IS THIS");
 		}
 		else if(rest.compareTo(b)>0){
-			// This is where we put Lenstra elliptic curve 
+			// This is where we put Lenstra elliptic curve or something similar
 			System.out.println("fail\n");
 			return;
 		}
